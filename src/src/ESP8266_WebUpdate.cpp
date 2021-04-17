@@ -11,12 +11,22 @@ extern SX127xDriver Radio;
 extern SX1280Driver Radio;
 #endif
 
-#define STASSID "ExpressLRS RX"
-#define STAPSK "expresslrs"
+#ifndef MY_WIFI_PASSWORD
+  #define MY_WIFI_PASSWORD "expresslrs"
+#endif
+
+#ifndef MY_TX_SSID
+  #define MY_TX_SSID "ExpressLRS TX"
+#endif
+
+#ifndef MY_RX_SSID
+  #define MY_RX_SSID "ExpressLRS RX"
+#endif
+
 const char *myHostname = "elrs_rx";
 
-const char *ssid = STASSID;
-const char *password = STAPSK;
+const char *ssid = MY_RX_SSID;
+const char *password = MY_WIFI_PASSWORD;
 
 extern hwTimer hwTimer;
 

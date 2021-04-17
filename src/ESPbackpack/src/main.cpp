@@ -15,8 +15,20 @@
 //#define INVERTED_SERIAL                                  // Comment this out for non-inverted serial
 #define USE_WIFI_MANAGER                                 // Comment this out to host an access point rather than use the WiFiManager
 
-const char *ssid = "ExpressLRS Tx";                        // The name of the Wi-Fi network that will be created
-const char *password = "expresslrs";                       // The password required to connect to it, leave blank for an open network
+#ifndef MY_WIFI_PASSWORD
+  #define MY_WIFI_PASSWORD "expresslrs"
+#endif
+
+#ifndef MY_TX_SSID
+  #define MY_TX_SSID "ExpressLRS TX"
+#endif
+
+#ifndef MY_RX_SSID
+  #define MY_RX_SSID "ExpressLRS RX"
+#endif
+
+const char *ssid = MY_TX_SSID;                        // The name of the Wi-Fi network that will be created
+const char *password = MY_WIFI_PASSWORD;                       // The password required to connect to it, leave blank for an open network
 
 MDNSResponder mdns;
 

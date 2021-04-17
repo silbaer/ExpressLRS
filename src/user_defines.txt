@@ -55,8 +55,6 @@
 
 ### OTHER OPTIONS: ###
 
--DAUTO_WIFI_ON_INTERVAL=20
-
 #-DJUST_BEEP_ONCE
 #-DMY_STARTUP_MELODY="B5 16 P16 B5 16 P16 B5 16 P16 B5 2 G5 2 A5 2 B5 8 P4 A5 8 B5 1|140|-3"
 
@@ -67,3 +65,10 @@
 
 #Comment this to disable diversity function
 #-DUSE_DIVERSITY
+
+### WIFI ###
+# -DMY_WIFI_PASSWORD="my_wifi_password"
+# -DMY_TX_SSID="ExpressLRS TX"
+# -DMY_RX_SSID="ExpressLRS RX"
+
+-DAUTO_WIFI_ON_INTERVAL=20

@@ -60,6 +60,15 @@ def parse_flags(path):
                         transposeBySemitones = int(defineValue[2]) if len(defineValue) > 2 else 0
                         parsedMelody = melodyparser.parseMelody(defineValue[0].strip(), int(defineValue[1]), transposeBySemitones)
                         define = "-DMY_STARTUP_MELODY_ARR=\"" + parsedMelody + "\""
+                    if "MY_WIFI_PASSWORD=" in define:
+                        defineValue = define.split('"')[1::2][0]
+                        define = "-DMY_WIFI_PASSWORD=\"\\\"" + defineValue + "\\\"\""
+                    if "MY_TX_SSID=" in define:
+                        defineValue = define.split('"')[1::2][0]
+                        define = "-DMY_TX_SSID=\"\\\"" + defineValue + "\\\"\""
+                    if "MY_RX_SSID=" in define:
+                        defineValue = define.split('"')[1::2][0]
+                        define = "-DMY_RX_SSID=\"\\\"" + defineValue + "\\\"\""
                     build_flags.append(define)
     except IOError:
         print("File '%s' does not exist" % path)
